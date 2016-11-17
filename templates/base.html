@@ -58,12 +58,12 @@
      <div class="col-md-3" >
       <div id="right">
         <h2>Популярные теги</h2>
-        <a id="poptag_h1" href="tag.html" >Python</a>
-        <a id="poptag_h2" href="tag.html" >C++</a>
-        <a id="poptag_h3" href="tag.html" >web</a>
-        <a id="poptag_h2" href="tag.html" >Chrome</a>
-        <a id="poptag_h2" href="tag.html" >CSS</a>
-        <a id="poptag_h1" href="tag.html" >BMSTU</a>
+        <a id="poptag_h3" href="{% url 'tag' tag%}" >Python</a>
+        <a id="poptag_h1" href="{% url 'tag' tag%}" >C++</a>
+        <a id="poptag_h2" href="{% url 'tag' tag%}" >web</a>
+        <a id="poptag_h1" href="{% url 'tag' tag%}" >Chrome</a>
+        <a id="poptag_h3" href="{% url 'tag' tag%}" >CSS</a>
+        <a id="poptag_h1" href="{% url 'tag' tag%}" >BMSTU</a>
       </div>
       <div id="right">
         <h2>Лучшие пользователи</h2>
