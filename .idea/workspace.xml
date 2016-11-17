@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bbd26d0c-4c90-4e70-a4dc-b456c518ba6c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tag.html" afterPath="$PROJECT_DIR$/templates/tag.html" />
     </list>
     <ignored path="ask_kuchaeva.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -116,8 +115,8 @@
       <file leaf-file-name="quest" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/quest">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
+            <state relative-caret-position="289">
+              <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -441,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479405305941</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Try make html for one question">
+      <created>1479406201503</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1479406201503</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -503,7 +509,8 @@
     <MESSAGE value="Change href in tag.html2" />
     <MESSAGE value="Correct src" />
     <MESSAGE value="Correct src, href in base" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correct src, href in base" />
+    <MESSAGE value="Try make html for one question" />
+    <option name="LAST_COMMIT_MESSAGE" value="Try make html for one question" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -608,8 +615,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/quest">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
+        <state relative-caret-position="289">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
           <folding />
         </state>
       </provider>
