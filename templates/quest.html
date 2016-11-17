@@ -19,12 +19,11 @@
           <p align="justify" id="question-text">{{quest.text}}</p>
           <div id="question-bottom">
             <a style="color:#08088A" href="{% url 'question_detail' quest.question_id %}"> Ответы(1) </a>
-	    Теги:
-	    {% for tag in quest.tags %}
+	       Теги{% for tag in quest.tags %}
               <a href="{% url 'tag' tag%}" id="tags"> {{tag}} </a>
             {% endfor %}
           </div>
         </div>
-</div>
-</div>
+   </div>
+   </div>
     {% endfor %}
