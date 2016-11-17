@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %} Регистрация {% endblock %}
+{% block content %}
+      <h2>Регистрация</h2>
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+               <label for="inputLogin" class="col-sm-2 control-label">Логин</label>
+			   <span class="error">Такой логин уже существует</span>
+               <div class="col-sm-6">
+                  <input type="text" maxlength="40" class="form-control" required>
+               </div>
+            </div>            
+            <div class="form-group">
+               <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+			   <span class="error">Неверный email</span>
+               <div class="col-sm-6">
+                  <input type="email" maxlength="40" class="form-control" placeholder="text@example.com" required>
+               </div>               
+            </div>
+            <div class="form-group">
+               <label for="inputNickName" maxlength="40" class="col-sm-2 control-label">Псевдоним</label>
+               <div class="col-sm-6">
+                  <input type="text" class="form-control" required>
+               </div>
+            </div>
+            <div class="form-group">                
+                <label for="inputPassword3" class="col-sm-2 control-label">Пароль</label>
+                <div class="col-sm-6">                  
+                  <input type="password" class="form-control" id="inputPassword3" maxlength="16" required>
+                </div>
+                <span class="help-block">От 6 до 16 символов</span>
+
+            </div> 
+            <div class="form-group">                
+                <label for="inputPassword3" class="col-sm-2 control-label">Повторите пароль</label>
+                <div class="col-sm-6">
+                  <input type="password" class="form-control" id="inputPassword3" maxlength="16" required >
+				  <span class="error">Пароли не совпадают</span>
+                </div>
+                <span class="help-block">От 6 до 16 символов</span>
+				
+            </div>
+
+              <div class="form-group">                
+                <label for="inputPassword3" class="col-sm-2 control-label">Загрузить фото</label>
+                <div class="col-sm-6">    
+                    <div><img id ="avatar" src="../avatar.png" border="0", height="90",width="90"> </div>                        
+                    <input  type="file">             
+                                   
+                </div>
+            </div> 
+
+              <div class="form-group">
+                 <div class="col-sm-offset-2 col-sm-6">
+                      <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                  </div>
+              </div>
+        </form>
+      {% endblock %}
+    

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>settings</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+ 
+<link href="css/bootstrap.css" rel="stylesheet">
+<style type="text/css"></style>
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/bootstrap-theme.css" rel="stylesheet">
+<link href="css/mycss.css" rel="stylesheet" !important  > 
+<base target="_self">
+
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+ </head>
+
+<script type="text/javascript" src="http://me.kis.v2.scr.kaspersky-labs.com/45F71BBB-9D1C-3A49-ADCD-DB95CE37C6D7/main.js" charset="UTF-8"></script></head>
+
+<body>
+<nav class="navbar">
+    <div class="container"> 
+    <div class="row">  
+      <div class="col-md-1"></div>
+      <div class="col-md-8">
+      <a class="navbar-brand" href="index.html">
+        <img src="logo.png" border="0", height="50",width="50"></a>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="search" class="form-control" placeholder="Search...">
+          <button type="submit" class="btn btn-info">Поиск</button>
+        </div>      
+      </form>  
+      <form class="navbar-form navbar-left" role="ask">
+        <div class="form-group">          
+          <a href="ask.html" class="btn btn-info">Задать вопрос</a>
+        </div>      
+      </form>
+    </div>
+    <div class="col-md-3" >            
+        <p ><a class="navbar-brand" href=# >
+          <img id ="avatar" src="avatar.png" border="0", height="46",width="46", align="middle">
+        </a> </p>
+        <span  id="navbar-autho">User</span>
+        <p>
+         <span id="navbar-autho"> <a style="color:#FFFFFF" href="settings.html" >Настройки </a> </span>
+         <span id="navbar-autho"> <a style="color:#FFFFFF" href=# >Выйти</a> </span>
+        </p>           
+    </div>
+    </div>
+    </div>  
+  </nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8" id="main">
+      <h2>Настройки</h2>
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+               <label for="inputLogin" class="col-sm-2 control-label">Логин</label>
+               <div class="col-sm-6">
+                  <input type="text" maxlength="40" class="form-control" required>
+               </div>
+            </div>            
+            <div class="form-group">
+               <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+               <div class="col-sm-6">
+                  <input type="email" maxlength="40" class="form-control" placeholder="text@example.com" required>
+               </div>               
+            </div>
+            <div class="form-group">
+               <label for="inputNickName" maxlength="40" class="col-sm-2 control-label">Псевдоним</label>
+               <div class="col-sm-6">
+                  <input type="text" class="form-control" required>
+               </div>
+            </div>
+            <div class="form-group">                
+                <label for="inputPassword3" class="col-sm-2 control-label">Пароль</label>
+                <div class="col-sm-6">                  
+                  <input type="password" class="form-control" id="inputPassword3" maxlength="16" required>
+                </div>
+                <span class="help-block">От 6 до 16 символов</span>
+
+            </div> 
+            <div class="form-group">                
+                <label for="inputPassword3" class="col-sm-2 control-label">Повторите пароль</label>
+                <div class="col-sm-6">
+                  <input type="password" class="form-control" id="inputPassword3" maxlength="16" required >
+                </div>
+                <span class="help-block">От 6 до 16 символов</span>
+            </div>
+
+              <div class="form-group">                
+                <label for="inputPassword3" class="col-sm-2 control-label">Изменить фото</label>
+                <div class="col-sm-6"> 
+                    <img id ="avatar" src="avatar.png" border="0", height="90",width="90">                             
+                    <input type="file">
+                                   
+                </div>
+            </div> 
+
+              <div class="form-group">
+                 <div class="col-sm-offset-2 col-sm-6">
+                      <button type="submit" class="btn btn-primary">Сохранить</button>
+                  </div>
+              </div>
+        </form>
+      
+    </div>
+
+     <div class="col-md-3" >
+      <div id="right">
+        <h2>Популярные теги</h2>
+        <a id="poptag_h1" href="tag.html" >Python</a>
+        <a id="poptag_h2" href="tag.html" >C++</a>
+        <a id="poptag_h3" href="tag.html" >web</a>
+        <a id="poptag_h2" href="tag.html" >Chrome</a>
+        <a id="poptag_h2" href="tag.html" >CSS</a>
+        <a id="poptag_h1" href="tag.html" >BMSTU</a>
+      </div>
+      <div id="right">
+        <h2>Лучшие пользователи</h2>
+        <h4>
+          <p><a  href=# >DoctorWho</a></p>
+          <p><a href=# >Amelia</a></p>
+          <p><a href=# >Rorry</a></p>
+        </h4>        
+      </div>
+    </div>
+  </div>
+
+<hr>
+<footer>
+<p>&copy; Company 2016</p>
+</footer>
+</div>  
+  
+<script src="js/jquery.js"></script>
+<script src="js/transition.js"></script>
+<script src="js/alert.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/dropdown.js"></script>
+<script src="js/scrollspy.js"></script>
+<script src="js/tab.js"></script>
+<script src="js/tooltip.js"></script>
+<script src="js/popover.js"></script>
+<script src="js/button.js"></script>
+<script src="js/collapse.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/typeahead.js"></script>
+</body>
+</html>

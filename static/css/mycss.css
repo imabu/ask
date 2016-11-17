@@ -1,0 +1,137 @@
+
+  @font-face { 
+  font-family: "FontAwesome";  
+  src: url("fonts/fontawesome-webfont.eot");  
+  src: url("fonts/fontawesome-webfont.eot?#iefix") format('eot'),  
+       url("fonts/fontawesome-webfont.woff") format('woff'),  
+       url("fonts/fontawesome-webfont.ttf") format('truetype'),  
+       url("fonts/fontawesome-webfont.svg#FontAwesome") format('svg');  
+  font-weight: normal;  
+  font-style: normal; } 
+body { padding-top: 0px; }
+
+.navbar{
+  height:70px;
+  padding-top:10px;
+  padding-bottom:10px;
+  background: #234584;
+  }
+.navbar-brand{
+    padding:0px;
+    }
+#navbar-autho{
+  padding:0px 0px 0px 10px;
+  margin: 5px 0px 0px 7px;  
+  color:#FFFFFF;
+  }
+#avatar{
+    border-radius: 10px;
+  }
+#right{
+  padding: 5px;
+  margin: 2px;
+  }
+#main{
+    margin:2px;  
+ }
+
+
+#block-question { 
+ border: 1px solid #08088A; 
+ border-radius:15px;
+ padding: 5px;
+ margin:10px 10px 20px 10px; 
+}
+#question {
+ padding: 5px;
+ margin:10px 10px 30px 10px; 
+}
+#answer_true{
+ border: 3px solid #03C03C; 
+ border-radius:5px;
+ padding: 5px;
+ margin:10px 10px 20px 10px; 
+}
+#answer{
+ border: 3px solid #a0bdf8; 
+ border-radius:5px;
+ padding: 5px;
+ margin:10px 10px 20px 10px; 
+}
+#question-header{
+text-decoration: underline;
+margin-top:0px;
+}
+#question-bottom{
+  position:absolute;  
+  bottom:0px;
+  margin:2px;
+  font-size:90%;
+}
+ #question-text{
+  min-height: 130px;
+  padding-bottom:10px;
+  margin-bottom:15px;
+  }
+#button-like{
+  margin-left: 0px;
+}
+
+#tags{
+  padding:2px;
+  margin:2px;
+  background:#E0E6F8;
+  border-radius: 5px;
+}
+#sort-type{
+margin:5px;
+}
+#rating{
+  color:green;
+  font-size:150%;
+  padding: 0px;
+  }
+
+  #poptag_h1{
+    color: #a764de;
+    font-size:150%;
+    padding:2px;
+  }
+  #poptag_h2{
+  color:#02a9f7;
+  font-size:130%;
+  padding:2px;
+  }
+#poptag_h3{
+  
+  color:#2ce4de;
+  font-size:110%;
+  padding:2px;
+  }
+  .form-horizontal{
+    margin-top:50px;
+  }
+
+  input[type="email"]:valid { 
+    border: lightgreen solid 1px
+  } 
+
+input[type="password"]:valid { 
+    border: lightgreen solid 1px
+
+  } 
+input[type="text"]:valid { 
+    border: lightgreen solid 1px
+
+  } 
+  .error{
+    color:#f7025c;
+  }
+  footer{
+	  
+  }
+  .add-answer{
+	 width: 97%;
+	margin-left: 11px;
+	margin-bottom:10px;
+  }
