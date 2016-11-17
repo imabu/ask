@@ -3,8 +3,8 @@
 {% block content %}
 {% block sortOrtag %}
 <div align="center" >
-        <a style="color:#08088A" id="sort-type"><big><big>Новые вопросы</big></big></a>
-        <a href="hot/" style="color:#08088A" id="sort-type"><big>Лучшие вопросы</big></a>
+        <a href="../../" style="color:#08088A" id="sort-type"><big>Новые вопросы</big></a>
+        <a style="color:#08088A" id="sort-type"><big><big>Лучшие вопросы</big></big></a>
 </div>
 {% endblock %}
 {% for quest in questions %}
@@ -12,7 +12,7 @@
 <div class="row" id="block-question" >
         <div class="col-md-2">
           <a href=#><span>{{quest.author}}</span>
-          <p><img id="avatar"src="avatar.png" border="0", height="70",width="70"></p>
+          <p><img id="avatar"src="../../avatar.png" border="0", height="70",width="70"></p>
 	      <div class="btn-group" data-toggle="buttons" id="button-like">
             <button type="radio" class="btn btn-success" name="like" value="1">
               <span class="glyphicon glyphicon-thumbs-up" ></span>
