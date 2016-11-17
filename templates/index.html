@@ -8,7 +8,7 @@
 </div>
 {% endblock %}
 {% for quest in questions %}
-<div>
+      <div>
 <div class="row" id="block-question" >
         <div class="col-md-2">
           <a href=#><span>{{quest.author}}</span>
@@ -30,7 +30,7 @@
             <a style="color:#08088A" href="question.html"> Ответы(1) </a>
 	    Теги:
 	    {% for tag in quest.tags %}
-              <a href="tag.html" id="tags"> {{tag}} </a>
+              <a href="{% url 'tag' tag %}" id="tags"> {{tag}} </a>
             {% endfor %}
           </div>
         </div>
