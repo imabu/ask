@@ -1,18 +1,19 @@
 {% extends "base.html" %}
-
-{% block title %} index {% endblock %}
+{% block title %} Go {% endblock %}
 {% block content %}
+{% block sortOrtag %}
 <div align="center" >
         <a style="color:#08088A" id="sort-type"><big>Новые вопросы</big></a>
         <a style="color:#08088A" id="sort-type"><big>Лучшие вопросы</big></a>
-      </div>
+</div>
+{% endblock %}
 {% for quest in questions %}
 <div>
 <div class="row" id="block-question" >
         <div class="col-md-2">
           <a href=#><span>{{quest.author}}</span>
           <p><img id="avatar"src="avatar.png" border="0", height="70",width="70"></p>
-	  <div class="btn-group" data-toggle="buttons" id="button-like">
+	      <div class="btn-group" data-toggle="buttons" id="button-like">
             <button type="radio" class="btn btn-success" name="like" value="1">
               <span class="glyphicon glyphicon-thumbs-up" ></span>
             </button>                   
@@ -21,7 +22,7 @@
             </button>
             <div align="center" id="rating">{{quest.rating}}</div> 
           </div>        
-	</div>
+	    </div>
         <div class="col-md-10">
           <h3 id ="question-header"><a style="color:#08088A" href="question.html"> {{quest.title}} </a></h3>
           <p align="justify" id="question-text">{{quest.text}}</p>
