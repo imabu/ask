@@ -5,36 +5,7 @@
         <div style="color:#08088A" id="sort-type"><big><big>{{tag}}</big></big></div>
       </div>
 
-    {% for quest in questions %}
-      <div>
-<div class="row" id="block-question" >
-        <div class="col-md-2">
-          <a href=#><span>{{quest.author}}</span>
-          <p><img id="avatar"src="../avatar.png" border="0", height="70",width="70"></p>
-	      <div class="btn-group" data-toggle="buttons" id="button-like">
-            <button type="radio" class="btn btn-success" name="like" value="1">
-              <span class="glyphicon glyphicon-thumbs-up" ></span>
-            </button>
-            <button type="radio" class="btn btn-danger" name="dislike" value="1" >
-              <span class="glyphicon glyphicon-thumbs-down" ></span>
-            </button>
-            <div align="center" id="rating">{{quest.rating}}</div>
-          </div>
-	    </div>
-        <div class="col-md-10">
-          <h3 id ="question-header"><a style="color:#08088A" href="{% url 'question_detail' quest.question_id %}"> {{quest.title}} </a></h3>
-          <p align="justify" id="question-text">{{quest.text}}</p>
-          <div id="question-bottom">
-            <a style="color:#08088A" href="{% url 'question_detail' quest.question_id %}"> Ответы(1) </a>
-	    Теги:
-	    {% for tag in quest.tags %}
-              <a href="{% url 'tag' tag%}" id="tags"> {{tag}} </a>
-            {% endfor %}
-          </div>
-        </div>
-</div>
-</div>
-    {% endfor %}
+    {% extends "quest.html" %}
 
       <div align="center">
           <nav aria-label="Page navigation">
