@@ -1,13 +1,27 @@
 from django.http import HttpResponse
-def hello(request):
-	res=''
-	if request.method=='GET':
 
-		res='GET: '
-		for key in request.GET:
-			res=res+key+' = '+request.GET[key]+' '
-	elif request.method=='POST':
-		res='POST: '
-		for key in request.POST:
-			res=res+key+' = '+request.POST[key]+' '
-	return HttpResponse(res)
+def application(request):
+    get = "GET:<br>"
+    for key in request.GET:
+        get += str(key) + " = " + str(request.GET[key]) + "<br>"
+    data = request.POST.get("data")
+    html = """
+    <html>
+    <body>
+       <form method="post" action="">
+            <p>
+               text: <input type="text" name="data" value="%(data)s">
+            </p>
+            <p>
+                <input type="submit" value="Submit">
+            </p>
+        </form>
+    </body>
+    </html>""" % {
+        'data': data
+    }
+    post = "POST:<br>"
+    for key in request.POST:
+        post += str(key) + " = " + str(request.POST[key]) + "<br>"
+    output = html + "<br>" + get + "<br>" + post
+    return HttpResponse(output)
