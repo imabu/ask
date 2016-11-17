@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 
-def application(request):
+def test(request):
     get = "GET:<br>"
     for key in request.GET:
         get += str(key) + " = " + str(request.GET[key]) + "<br>"
