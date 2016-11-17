@@ -35,7 +35,7 @@ def hot(request):
 	questions=[]
 	t =get_template('index.html')
 	for i in range(1,10):
-		questions.append({'title': 'title'+str(i), 'text':'text','author': 'user '+str(i),'rating':i, 'tags':[str(i), 'tag'+str(i)]},)
+		questions.append({'question_id':question_id,'title': 'title'+str(i), 'text':'text','author': 'user '+str(i),'rating':i, 'tags':[str(i), 'tag'+str(i)]},)
 	context={'questions':questions}
 	return render(request,'index.html',context)
 
@@ -43,6 +43,6 @@ def tag(request,tag):
 	questions=[]
 	t=get_template('tag.html')
 	for i in range(1,10):
-		questions.append({'tag':tag,'title': 'title'+str(i), 'text':'text','author': 'user '+str(i),'rating':i, 'tags':[str(i), 'tag'+str(i)]},)
-	context={'questions':questions}
+		questions.append({'question_id':question_id,'title': 'title'+str(i), 'text':'text','author': 'user '+str(i),'rating':i, 'tags':[str(i), 'tag'+str(i)]},)
+	context={'questions':questions,'tag':tag}
 	return render(request,'tag.html',context)

@@ -24,10 +24,10 @@
           </div>        
 	    </div>
         <div class="col-md-10">
-          <h3 id ="question-header"><a style="color:#08088A" href="question.html"> {{quest.title}} </a></h3>
+          <h3 id ="question-header"><a style="color:#08088A" href="{% url 'question_detail' quest.question_id %}"> {{quest.title}} </a></h3>
           <p align="justify" id="question-text">{{quest.text}}</p>
           <div id="question-bottom">
-            <a style="color:#08088A" href="question.html"> Ответы(1) </a>
+            <a style="color:#08088A" href="{% url 'question_detail' quest.question_id %}"> Ответы(1) </a>
 	    Теги:
 	    {% for tag in quest.tags %}
               <a href="{% url 'tag' tag %}" id="tags"> {{tag}} </a>

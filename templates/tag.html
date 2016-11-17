@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-{% block title %} {{questions.tag}} {% endblock %}
+{% block title %} {{tag}} {% endblock %}
 {% block content %}
       <div align="left" >
-        <div style="color:#08088A" id="sort-type"><big><big>{{questions.tag}}</big></big></div>
+        <div style="color:#08088A" id="sort-type"><big><big>{{tag}}</big></big></div>
       </div>
 
     {% for quest in questions %}
