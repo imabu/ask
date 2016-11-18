@@ -28,11 +28,17 @@
           <input type="search" class="form-control" placeholder="Search...">
           <button type="submit" class="btn btn-info">Поиск</button>
         </div>      
-      </form>  
+      </form>
+          {% if isAuth%}
+          <form class="navbar-form navbar-left" role="ask">
+        <div class="form-group">
+          <a href="ask.html" class="btn btn-info">Задать вопрос</a>
+        </div>
+      </form>
     </div>
 
     <div class="col-md-3" >
-        {% if isAuth%}
+
          <p ><a class="navbar-brand" href=# >
           <img id ="avatar" src="../../avatar.png" border="0", height="46",width="46", align="middle">
           </a> </p>
@@ -42,6 +48,7 @@
          <span id="navbar-autho"> <a style="color:#FFFFFF" href=# >Выйти</a> </span>
         </p>
         {% else %}
+        </div>
         <form class="navbar-form" >
            <div class="navbar-brand form-group">
              <a href="../../login" class="btn btn-info">Войти</a>

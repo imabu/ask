@@ -16,7 +16,7 @@ class Question(models.Model):
 	def __uncode__(self):
 		return self.title
 
-class Profile(models.Model):
+class Profile(User):
 	objects = UserManager()
 	name= models.CharField(max_lenght=50,verbose_name=u'Name')
 	login = models.CharField(max_lenght=50, verbose_name=u'Login')
