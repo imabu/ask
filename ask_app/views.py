@@ -7,8 +7,8 @@ def index(request):
 	questions=[]
 	t =get_template('index.html')
 	for i in range(1,10):
-		questions.append({'question_id':question_id,'title': 'title'+str(i), 'text':'text','author': 'user '+str(i),'rating':i, 'tags':[str(i), 'tag'+str(i)]},)
-	context={'questions':questions}	
+		questions.append({'question_id':i,'title': 'title'+str(i), 'text':'text','author': 'user '+str(i),'rating':i, 'tags':[str(i), 'tag'+str(i)]},)
+	context={'questions':questions, 'isAuth':1}
 	return render(request,'index.html',context)
 
 def signup(request):
@@ -20,26 +20,28 @@ def question_detail(request, question_id):
 	comments=[]
 	for i in range(1,5):
 		comments+={'text':'text','author': 'user '+str(question_id+i),'rating':i,'isTrue':1}
-	context={'question_details':question_details,'comments':comments}
+	context={'question_details':question_details,'comments':comments,'isAuth':1}
 	return render(request, 'question.html', context)
 
 def login(request):
-	return render(request,'login.html')
+	context = {'isAuth': 0}
+	return render(request,'login.html',context)
 
 def settings(request):
 	user_data={'login':'user','email':'smth@smth.com','nickname':'user_1'}
-	context={'user_data':user_data}
+	context={'user_data':user_data,'isAuth':1}
 	return render(request,'settings.html',context)
 
 def ask(request):
-	return render(request,'ask.html')
+	context = {'isAuth': 1}
+	return render(request,'ask.html',context)
 
 def hot(request):
 	questions=[]
 	t =get_template('index.html')
 	for i in range(1,10):
 		questions.append({'question_id':question_id,'title': 'title'+str(i), 'text':'text','author': 'user '+str(i),'rating':i, 'tags':[str(i), 'tag'+str(i)]},)
-	context={'questions':questions}
+	context={'questions':questions,'isAuth':1}
 	return render(request,'index.html',context)
 
 def tag(request,tag):
@@ -47,5 +49,5 @@ def tag(request,tag):
 	t=get_template('tag.html')
 	for i in range(1,10):
 		questions.append({'question_id':i,'title': 'title'+str(i), 'text':'text','author': 'user '+str(i),'rating':i, 'tags':[str(i), 'tag'+str(i)]},)
-	context={'questions':questions,'tag':tag}
+	context={'questions':questions,'tag':tag,'isAuth':1}
 	return render(request,'tag.html',context)

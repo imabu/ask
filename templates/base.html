@@ -13,12 +13,6 @@
  <link href="../../css/bootstrap-theme.css" rel="stylesheet">
 <link href="../../css/mycss.css" rel="stylesheet" !important  >
 <base target="_self">
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
- 
-
-<script type="text/javascript" src="http://me.kis.v2.scr.kaspersky-labs.com/45F71BBB-9D1C-3A49-ADCD-DB95CE37C6D7/main.js" charset="UTF-8"></script></head>
 
 <body>
  
@@ -36,13 +30,25 @@
         </div>      
       </form>  
     </div>
-    <div class="col-md-3" > 
-    <form class="navbar-form" >          
-       <div class="navbar-brand form-group">
-        <a href="../../login" class="btn btn-info">Войти</a>
-        <a href="../../signup" class="btn btn-info">Регистрация</a>
-      </div> 
-      </form>    
+
+    <div class="col-md-3" >
+        {% if isAuth==1 %}
+        <form class="navbar-form" >
+           <div class="navbar-brand form-group">
+             <a href="../../login" class="btn btn-info">Войти</a>
+             <a href="../../signup" class="btn btn-info">Регистрация</a>
+           </div>
+        </form>
+        {% else %}
+        <p ><a class="navbar-brand" href=# >
+          <img id ="avatar" src="../../avatar.png" border="0", height="46",width="46", align="middle">
+          </a> </p>
+        <span  id="navbar-autho">User</span>
+        <p>
+         <span id="navbar-autho"> <a style="color:#FFFFFF" href="../../settings" >Настройки </a> </span>
+         <span id="navbar-autho"> <a style="color:#FFFFFF" href=# >Выйти</a> </span>
+        </p>
+        {% endif %}
     </div>
     </div>
     </div>  
