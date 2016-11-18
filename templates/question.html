@@ -3,7 +3,8 @@
 {% block content %}
       <div class="row" id="question" >
         <div class="col-md-2">
-          <a href=#><span>{{question_details.author}}</span>
+          <div align="center"> <a href=#><div>{{question_details.author}}</div>
+
           <p><img id="avatar"src="../../avatar.png" border="0", height="70",width="70"></p>  </a>
           <div class="btn-group" data-toggle="buttons" id="button-like">
             <button type="radio" class="btn btn-success" name="like" value="1">
@@ -30,7 +31,7 @@
 {% if comment.isTrue %}
       <div class="row" id="answer_true" >
         <div class="col-md-2">
-          <a href=#><span>{{comment.author}}</span>
+         <div align="center"> <a href=#><div>{{comment.author}}</div>
           <p><img id="avatar"src="../../avatar.png" border="0", height="70",width="70"></p></a>
           <div class="btn-group" data-toggle="buttons" id="button-like">
             <button type="radio" class="btn btn-success" name="like" value="1">

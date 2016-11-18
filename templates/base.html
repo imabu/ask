@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>{% block title %}base {% endblock %}</title>
+<title>{% block title %} base {% endblock %}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -33,14 +33,7 @@
 
     <div class="col-md-3" >
         {% if isAuth%}
-        <form class="navbar-form" >
-           <div class="navbar-brand form-group">
-             <a href="../../login" class="btn btn-info">Войти</a>
-             <a href="../../signup" class="btn btn-info">Регистрация</a>
-           </div>
-        </form>
-        {% else %}
-        <p ><a class="navbar-brand" href=# >
+         <p ><a class="navbar-brand" href=# >
           <img id ="avatar" src="../../avatar.png" border="0", height="46",width="46", align="middle">
           </a> </p>
         <span  id="navbar-autho">User</span>
@@ -48,6 +41,13 @@
          <span id="navbar-autho"> <a style="color:#FFFFFF" href="../../settings" >Настройки </a> </span>
          <span id="navbar-autho"> <a style="color:#FFFFFF" href=# >Выйти</a> </span>
         </p>
+        {% else %}
+        <form class="navbar-form" >
+           <div class="navbar-brand form-group">
+             <a href="../../login" class="btn btn-info">Войти</a>
+             <a href="../../signup" class="btn btn-info">Регистрация</a>
+           </div>
+        </form>
         {% endif %}
     </div>
     </div>
