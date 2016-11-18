@@ -19,7 +19,7 @@
           <h3 id ="question-header">{{question_details.title}}</h3>
           <p align="justify" id="question-text">{{question_details.text}}</p>
           <div id="question-bottom">            
-            {% for tag in question_details.tags %}Теги:
+           Теги: {% for tag in question_details.tags %}
             <a href="tag.html" id="tags"> {{tag}}</a>
             {% endfor %}
           </div>

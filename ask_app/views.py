@@ -19,7 +19,7 @@ def question_detail(request, question_id):
 	question_details={'question_id':question_id,'title':'title'+str(question_id), 'text':'text','author': 'user '+str(question_id),'rating':question_id, 'tags':[str(question_id), 'tag'+str(question_id)]}
 	comments=[]
 	for i in range(1,5):
-		comments+={'text':'text','author': 'user '+str(i),'rating':i,'isTrue':True}
+		comments+={'text':'text','author': 'user '+str(i),'rating':str(i),'isTrue':'True'}
 	context={'question_details':question_details,'comments':comments,'isAuth':True}
 	return render(request, 'question.html', context)
 
