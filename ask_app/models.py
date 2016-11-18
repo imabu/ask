@@ -13,6 +13,7 @@ class Question(models.Model):
 	text= models.TextField(verbose_name=u'Text')
 	author = models.ForeignKey('Profile')
 	tags=models.ManyToManyField(Tag)
+	rating=models.IntegerField(default=0)
 	class Meta:
 		verbose_name=u'Question'
 		verbose_name_plural=u'Questions'
