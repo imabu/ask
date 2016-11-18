@@ -18,37 +18,33 @@
  
 <nav class="navbar">
     <div class="container"> 
-    <div class="row">  
+     <div class="row">
       <div class="col-md-1"></div>
-      <div class="col-md-8">
-      <a class="navbar-brand" href="../">
+       <div class="col-md-7">
+        <a class="navbar-brand" href="../">
         <img src="../../logo.png" border="0", height="50",width="50"></a>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="search" class="form-control" placeholder="Search...">
-          <button type="submit" class="btn btn-info">Поиск</button>
-        </div>      
-      </form>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="search" class="form-control" placeholder="Search...">
+            <button type="submit" class="btn btn-info">Поиск</button>
+          </div>
+        </form>
           {% if isAuth%}
           <form class="navbar-form navbar-left" role="ask">
-        <div class="form-group">
-          <a href="../../ask" class="btn btn-info">Задать вопрос</a>
+            <div class="form-group">
+               <a href="../../ask" class="btn btn-info">Задать вопрос</a>
+            </div>
+          </form>
+       </div>
+        <div class="col-md-1 navbar-user" >
+          <a href=#><img id ="avatar" src="avatar.png" border="0", height="46",width="46", align="right"> </a>
         </div>
-      </form>
-    </div>
-
-    <div class="col-md-3" >
-
-         <p ><a class="navbar-brand" href=# >
-          <img id ="avatar" src="../../avatar.png" border="0", height="46",width="46", align="middle">
-          </a> </p>
-        <p aling="center" id="navbar-autho">User</p>
-        <p>
-         <span id="navbar-autho"> <a style="color:#FFFFFF" href="../../settings" >Настройки </a> </span>
-         <span id="navbar-autho"> <a style="color:#FFFFFF" href=# >Выйти</a> </span>
-        </p>
+        <div class="col-md-1 navbar-user" >
+         <p id="navbar-autho"> <a style="color:#FFFFFF" href="settings.html" >Настройки </a> </p>
+         <p id="navbar-autho"> <a style="color:#FFFFFF" href=# >Выйти</a> </p>
+        </div>
         {% else %}
-        </div>
+      </div>
         <form class="navbar-form" >
            <div class="navbar-brand form-group">
              <a href="../../login" class="btn btn-info">Войти</a>
@@ -58,7 +54,6 @@
         {% endif %}
     </div>
     </div>
-    </div>  
   </nav>
 
 
@@ -69,21 +64,25 @@
     </div>
 
      <div class="col-md-3" >
-      <div id="right">
+      <div align="center" id="right">
         <h2>Популярные теги</h2>
-        <a id="poptag_h3" href="{% url 'tag' 'Python'%}" >Python</a>
-        <a id="poptag_h1" href="{% url 'tag' 'C'%}" >C</a>
-        <a id="poptag_h2" href="{% url 'tag' 'web'%}" >web</a>
-        <a id="poptag_h1" href="{% url 'tag' 'Chrome'%}" >Chrome</a>
-        <a id="poptag_h3" href="{% url 'tag' 'CSS'%}" >CSS</a>
-        <a id="poptag_h1" href="{% url 'tag' 'BMSTU'%}" >BMSTU</a>
+          <div align="justify">
+            <a id="poptag_h3" href="{% url 'tag' 'Python'%}" >Python</a>
+            <a id="poptag_h1" href="{% url 'tag' 'C'%}" >C</a>
+            <a id="poptag_h2" href="{% url 'tag' 'web'%}" >web</a>
+            <a id="poptag_h1" href="{% url 'tag' 'Chrome'%}" >Chrome</a>
+            <a id="poptag_h3" href="{% url 'tag' 'CSS'%}" >CSS</a>
+            <a id="poptag_h1" href="{% url 'tag' 'BMSTU'%}" >BMSTU</a>
+          </div>
       </div>
-      <div id="right">
+      <div align="center" id="right">
         <h2>Лучшие пользователи</h2>
         <h4>
-          <p><a  href=# >DoctorWho</a></p>
-          <p><a href=# >Amelia</a></p>
-          <p><a href=# >Rorry</a></p>
+            <div align="left">
+                <p><a  href=# >Doctor</a></p>
+                <p><a href=# >Amelia</a></p>
+                <p><a href=# >Rorry</a></p>
+            </div>
         </h4>        
       </div>
     </div>
