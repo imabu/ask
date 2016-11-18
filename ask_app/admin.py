@@ -1,5 +1,5 @@
 from django.contrib import admin
-from ask import models
+from ask_app import models
 # Register your models here.
 class QuestionAdmin(admin.ModelAdmin):
     list_display('title','text','author','tags')
