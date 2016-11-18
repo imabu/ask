@@ -21,9 +21,6 @@ class Question(models.Model):
 
 class Profile(User):
 	objects = UserManager()
-	name= models.CharField(max_length=50,verbose_name=u'Name')
-	login = models.CharField(max_length=20,verbose_name=u'Login')
-	email = models.EmailField(max_length=20,verbose_name=u'Email')
 	class Meta:
 		verbose_name=u'User'
 		verbose_name_plural=u'Users'
