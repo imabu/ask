@@ -26,6 +26,8 @@
         </div>
       </div>
       <hr>
+{% for comment in comments %}
+{% if {{comment.isTrue==1} %}
       <div class="row" id="answer_true" >
         <div class="col-md-2">
           <a href=#><span>User</span>
@@ -49,6 +51,7 @@
           </div>
         </div>
       </div>
+{% else %}
       <div class="row" id="answer" >	  
         <div class="col-md-2">
           <a href=#><span>User</span>
@@ -74,6 +77,8 @@
           </div>
         </div>
       </div>
+{% endif %}
+{%endfor %}
 	<div>
 	<textarea class="form-control add-answer" rows="5"></textarea>
 	 <div class="form-group">
