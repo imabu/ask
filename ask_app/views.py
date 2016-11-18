@@ -7,7 +7,7 @@ def index(request):
 	questions=[]
 	t =get_template('index.html')
 	for i in range(1,10):
-		questions.append({'question_id':i,'title': 'title'+str(i), 'text':'text','author': 'user '+str(i),'rating':i, 'tags':[str(i), 'tag'+str(i)]},)
+		questions.append({'question_id':i,'title': 'title'+str(i), 'text':'text','author': 'user '+str(i),'rating':str(i), 'tags':[str(i), 'tag'+str(i)]},)
 	context={'questions':questions, 'isAuth':True}
 	return render(request,'index.html',context)
 
@@ -19,7 +19,7 @@ def question_detail(request, question_id):
 	question_details={'question_id':question_id,'title':'title'+str(question_id), 'text':'text','author': 'user '+str(question_id),'rating':question_id, 'tags':[str(question_id), 'tag'+str(question_id)]}
 	comments=[]
 	for i in range(1,5):
-		comments+={'text':'text','author': 'user '+str(question_id+i),'rating':i,'isTrue':'1'}
+		comments+={'text':'text','author': 'user '+str(question_id+i),'rating':str(i),'isTrue':'1'}
 	context={'question_details':question_details,'comments':comments,'isAuth':'1'}
 	return render(request, 'question.html', context)
 
@@ -48,6 +48,6 @@ def tag(request,tag):
 	questions=[]
 	t=get_template('tag.html')
 	for i in range(1,10):
-		questions.append({'question_id':i,'title': 'title'+str(i), 'text':'text','author': 'user '+str(i),'rating':i, 'tags':[str(i), 'tag'+str(i)]},)
+		questions.append({'question_id':i,'title': 'title'+str(i), 'text':'text','author': 'user '+str(i),'rating':str(i), 'tags':[str(i), 'tag'+str(i)]},)
 	context={'questions':questions,'tag':tag,'isAuth':True}
 	return render(request,'tag.html',context)
