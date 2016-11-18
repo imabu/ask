@@ -1,64 +1,15 @@
 {% extends "base.html" %}
 {% block title %} Go {% endblock %}
 {% block content %}
-{% block sortOrtag %}
-<div align="center" >
+ <div align="center" >
         <a href="../../" style="color:#08088A" id="sort-type"><big>Новые вопросы</big></a>
         <a style="color:#08088A" id="sort-type"><big><big>Лучшие вопросы</big></big></a>
-</div>
-{% endblock %}
-{% for quest in questions %}
-      <div>
-<div class="row" id="block-question" >
-        <div class="col-md-2">
-          <a href=#><span>{{quest.author}}</span>
-          <p><img id="avatar"src="../../avatar.png" border="0", height="70",width="70"></p>
-	      <div class="btn-group" data-toggle="buttons" id="button-like">
-            <button type="radio" class="btn btn-success" name="like" value="1">
-              <span class="glyphicon glyphicon-thumbs-up" ></span>
-            </button>                   
-            <button type="radio" class="btn btn-danger" name="dislike" value="1" >
-              <span class="glyphicon glyphicon-thumbs-down" ></span>
-            </button>
-            <div align="center" id="rating">{{quest.rating}}</div> 
-          </div>        
-	    </div>
-        <div class="col-md-10">
-          <h3 id ="question-header"><a style="color:#08088A" href="{% url 'question_detail' quest.question_id %}"> {{quest.title}} </a></h3>
-          <p align="justify" id="question-text">{{quest.text}}</p>
-          <div id="question-bottom">
-            <a style="color:#08088A" href="{% url 'question_detail' quest.question_id %}"> Ответы(1) </a>
-	    Теги:
-	    {% for tag in quest.tags %}
-              <a href="{% url 'tag' tag %}" id="tags"> {{tag}} </a>
-            {% endfor %}
-          </div>
-        </div>
-</div>     
-</div>
-{% endfor %}
-      <div align="center">
-          <nav aria-label="Page navigation">
-            <ul  class="pagination pagination">
-              <li class="disabled">
-                <a href="#" aria-label="Previous" >
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="active"><a href="#" >1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li>
-                <a href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-  </nav>
-</div>
+ </div>
 
+ {% for quest in questions %}
+    {% include "quest.html" %}
+ {% endfor %}
+ {%include "paginator.html" %}
 {% endblock content %}
     
  
