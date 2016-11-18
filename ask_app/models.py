@@ -9,7 +9,7 @@ class Question(models.Model):
 	title= models.CharField(verbose_name=u'Title')
 	text= models.TextField(verbose_name=u'Text')
 	author = models.ForeignKey('User')
-	tags=models.ManyToManyField(tags)
+	tags=models.ManyToManyField(Tag)
 	class Meta:
 		verbose_name=u'Question'
 		verbose_name_plural=u'Questions'
@@ -39,3 +39,6 @@ class Like(models.Model):
 	user=models.ForeignKey('User')
 	question=models.ForeignKey('Question')
 	value=((1,'like'),(-1,'dislike'))
+
+class Tag(models.Model):
+	value=models.CharField(verbouse_name=u'Tag')
