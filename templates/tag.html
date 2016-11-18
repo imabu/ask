@@ -1,9 +1,8 @@
 {% extends "base.html" %}
 {% block title %} {{tag}} {% endblock %}
 {% block content %}
-      <div>
-        <div style="color:#08088A font: bold 200%" id="sort-type">Тег: {{tag}}</div>
-      </div>
+            <div style="color:#08088A " id="sort-type"><h2>Тег: {{tag}}</h2></div>
+
 {% for quest in questions %}
     {% include "quest.html" %}
  {% endfor %}
