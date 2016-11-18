@@ -7,7 +7,13 @@ from django.contrib.auth.models import User, UserManager
 #makemigrations
 class Tag(models.Model):
 	value=models.CharField(max_length=15,verbose_name=u'Tag')
-
+class Profile(User):
+	objects = UserManager()
+	class Meta:
+		verbose_name=u'User'
+		verbose_name_plural=u'Users'
+	def __uncode__(self):
+		return self.login
 class Question(models.Model):
 	title= models.CharField(max_length=100,verbose_name=u'Title')
 	text= models.TextField(verbose_name=u'Text')
@@ -20,16 +26,9 @@ class Question(models.Model):
 	def __uncode__(self):
 		return self.title
 
-class Profile(User):
-	objects = UserManager()
-	class Meta:
-		verbose_name=u'User'
-		verbose_name_plural=u'Users'
-	def __uncode__(self):
-		return self.login
 class Answer(models.Model):
 	text= models.TextField(verbose_name=u'Text')
-	author = models.ForeignKey('User')
+	author = models.ForeignKey('Profile')
 	tags=models.ManyToManyField(Tag)
 	class Meta:
 		verbose_name=u'Answer'
@@ -37,7 +36,7 @@ class Answer(models.Model):
 	def __uncode__(self):
 		return self.text
 class Like(models.Model):
-	user=models.ForeignKey('User')
+	user=models.ForeignKey('Profile')
 	question=models.ForeignKey('Question')
 	value=((1,'like'),(-1,'dislike'))
 
