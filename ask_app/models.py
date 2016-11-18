@@ -6,9 +6,10 @@ from django.contrib.auth.models import User, UserManager
 # Create your models here.
 #makemigrations
 class Tag(models.Model):
-	value=models.CharField(verbouse_name=u'Tag')
+	value=models.CharField(max_lenth=15,verbose_name=u'Tag')
+
 class Question(models.Model):
-	title= models.CharField(verbose_name=u'Title')
+	title= models.CharField(max_lenth=100,verbose_name=u'Title')
 	text= models.TextField(verbose_name=u'Text')
 	author = models.ForeignKey('Profile')
 	tags=models.ManyToManyField(Tag)
@@ -20,9 +21,9 @@ class Question(models.Model):
 
 class Profile(User):
 	objects = UserManager()
-	name= models.CharField(verbose_name=u'Name')
-	login = models.CharField(verbose_name=u'Login')
-	email = models.EmailField(verbose_name=u'Email')
+	name= models.CharField(max_lenth=50,verbose_name=u'Name')
+	login = models.CharField(max_lenth=20,verbose_name=u'Login')
+	email = models.EmailField(max_lenth=20,verbose_name=u'Email')
 	class Meta:
 		verbose_name=u'User'
 		verbose_name_plural=u'Users'
@@ -31,7 +32,7 @@ class Profile(User):
 class Answer(models.Model):
 	text= models.TextField(verbose_name=u'Text')
 	author = models.ForeignKey('User')
-	tags=models.ManyToManyField(tags)
+	tags=models.ManyToManyField(Tag)
 	class Meta:
 		verbose_name=u'Answer'
 		verbose_name_plural=u'Answers'
