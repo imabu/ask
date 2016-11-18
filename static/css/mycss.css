@@ -9,7 +9,10 @@
   font-weight: normal;  
   font-style: normal; } 
 body { padding-top: 0px; }
-
+.navbar-user{
+	padding:0px;
+	margin:0px;
+}
 .navbar{
   height:70px;
   padding-top:10px;
