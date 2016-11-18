@@ -27,7 +27,7 @@
       </div>
       <hr>
 {% for comment in comments %}
-{% if {{comment.isTrue} %}
+{% if {{comment.isTrue}} %}
       <div class="row" id="answer_true" >
         <div class="col-md-2">
           <a href=#><span>User</span>
@@ -40,14 +40,12 @@
             <span class="glyphicon glyphicon-thumbs-down" ></span>
             </button>
             <div align="center" id="rating">0</div>
-            
           </div>
         </div>
         <div class="col-md-10" >          
           <p align="justify" id="question-text">Text</p>
           <div id="question-bottom">
             <div id="correct_answer"><a href=#> <span style="color: green" class="glyphicon glyphicon-ok" ></span></a><span style="color: green; margin-left:5px">Правильный ответ</span></div>
-      
           </div>
         </div>
       </div>
