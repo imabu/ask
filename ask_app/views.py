@@ -40,8 +40,8 @@ def hot(request):
 	questions=[]
 	t =get_template('index.html')
 	for i in range(1,10):
-		questions.append({'question_id':question_id,'title': 'title'+str(i), 'text':'text','author': 'user '+str(i),'rating':i, 'tags':[str(i), 'tag'+str(i)]},)
-	context={'questions':questions,'isAuth':True}
+		questions.append({'question_id':i,'title': 'title'+str(i), 'text':'text','author': 'user '+str(i),'rating':i, 'tags':[str(i), 'tag'+str(i)]},)
+	context={'questions':questions,'isAuth':False}
 	return render(request,'index.html',context)
 
 def tag(request,tag):

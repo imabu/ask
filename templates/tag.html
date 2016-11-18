@@ -2,7 +2,7 @@
 {% block title %} {{tag}} {% endblock %}
 {% block content %}
       <div align="center" >
-        <div style="color:#08088A" id="sort-type"><big><big>{{tag}}</big></big></div>
+        <div style="color:#08088A font: bold 130%" id="sort-type">{{tag}}</div>
       </div>
 {% for quest in questions %}
     {% include "quest.html" %}
