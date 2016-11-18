@@ -5,10 +5,12 @@ from django.contrib.auth.models import User, UserManager
 
 # Create your models here.
 #makemigrations
+class Tag(models.Model):
+	value=models.CharField(verbouse_name=u'Tag')
 class Question(models.Model):
 	title= models.CharField(verbose_name=u'Title')
 	text= models.TextField(verbose_name=u'Text')
-	author = models.ForeignKey('User')
+	author = models.ForeignKey('Profile')
 	tags=models.ManyToManyField(Tag)
 	class Meta:
 		verbose_name=u'Question'
@@ -40,5 +42,3 @@ class Like(models.Model):
 	question=models.ForeignKey('Question')
 	value=((1,'like'),(-1,'dislike'))
 
-class Tag(models.Model):
-	value=models.CharField(verbouse_name=u'Tag')
