@@ -19,7 +19,7 @@ from views import hello
 from ask_app import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url('^hello/', hello),
+    url(r'^hello/', hello),
     url(r'^$',views.index, name='index'),
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^login/$', views.login, name='login'),

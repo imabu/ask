@@ -6,7 +6,7 @@ from django.contrib.auth.models import User, UserManager
 # Create your models here.
 #makemigrations
 class Question(models.Model):
-	title= models.CharField(max_lenght=100,verbose_name=u'Title')
+	title= models.CharField(verbose_name=u'Title')
 	text= models.TextField(verbose_name=u'Text')
 	author = models.ForeignKey('User')
 	tags=models.ManyToManyField(tags)
@@ -18,9 +18,9 @@ class Question(models.Model):
 
 class Profile(User):
 	objects = UserManager()
-	name= models.CharField(max_lenght=50,verbose_name=u'Name')
-	login = models.CharField(max_lenght=50, verbose_name=u'Login')
-	email = models.EmailField(max_lenght=50, verbose_name=u'Email')
+	name= models.CharField(verbose_name=u'Name')
+	login = models.CharField(verbose_name=u'Login')
+	email = models.EmailField(verbose_name=u'Email')
 	class Meta:
 		verbose_name=u'User'
 		verbose_name_plural=u'Users'
