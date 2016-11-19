@@ -4,10 +4,6 @@
     <list default="true" id="bbd26d0c-4c90-4e70-a4dc-b456c518ba6c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ask_app/admin.py" afterPath="$PROJECT_DIR$/ask_app/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ask_app/models.py" afterPath="$PROJECT_DIR$/ask_app/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ask_app/views.py" afterPath="$PROJECT_DIR$/ask_app/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ask_kuchaeva/settings.py" afterPath="$PROJECT_DIR$/ask_kuchaeva/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/paginator.html" afterPath="$PROJECT_DIR$/templates/paginator.html" />
     </list>
     <ignored path="ask_kuchaeva.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ask_app/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+            <state relative-caret-position="136">
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -51,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="paginator.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="paginator.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/paginator.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
@@ -126,9 +122,9 @@
         <option value="$PROJECT_DIR$/ask_kuchaeva/urls.py" />
         <option value="$PROJECT_DIR$/ask_app/models.py" />
         <option value="$PROJECT_DIR$/ask_kuchaeva/settings.py" />
-        <option value="$PROJECT_DIR$/ask_app/admin.py" />
         <option value="$PROJECT_DIR$/ask_app/views.py" />
         <option value="$PROJECT_DIR$/templates/paginator.html" />
+        <option value="$PROJECT_DIR$/ask_app/admin.py" />
       </list>
     </option>
   </component>
@@ -386,13 +382,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1479053233983</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Change href in tag.html2">
-      <created>1479404907618</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1479404907618</updated>
     </task>
     <task id="LOCAL-00005" summary="Correct src">
       <created>1479405089597</created>
@@ -730,7 +719,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479509022203</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="models&amp;admin+paginator">
+      <created>1479514922453</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1479514922453</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -801,7 +797,8 @@
     <MESSAGE value="correcr views details" />
     <MESSAGE value="correcr htmls" />
     <MESSAGE value="models&amp;admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="models&amp;admin" />
+    <MESSAGE value="models&amp;admin+paginator" />
+    <option name="LAST_COMMIT_MESSAGE" value="models&amp;admin+paginator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1027,16 +1024,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ask_app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
-          <folding>
-            <element signature="e#22#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1061,16 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ask_app/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ask_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1086,6 +1063,26 @@
         <state relative-caret-position="304">
           <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ask_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+          <folding>
+            <element signature="e#22#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ask_app/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

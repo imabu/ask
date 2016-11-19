@@ -6,11 +6,11 @@ class QuestionAdmin(admin.ModelAdmin):
 class AnswerAdmin(admin.ModelAdmin):
     list_display=('text',)
 class TagAdmin(admin.ModelAdmin):
-    list_display=('tag',)
-class ProfileAdmin(admin.ModelAdmin):
-    list_display=('login',)
+    list_display=('value',)
+#class ProfileAdmin(admin.ModelAdmin):
+    #list_display=('login',)
 
 admin.site.register(models.Question,QuestionAdmin)
 admin.site.register(models.Answer,AnswerAdmin)
 admin.site.register(models.Tag,TagAdmin)
-admin.site.register(models.Profile,ProfileAdmin)
+#admin.site.register(models.Profile,ProfileAdmin)
