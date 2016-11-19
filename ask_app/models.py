@@ -9,6 +9,7 @@ class Tag(models.Model):
 	value=models.CharField(max_length=15,verbose_name=u'Tag')
 class Profile(User):
 	objects = UserManager()
+	avatar=models.ImageField(upload_to='avatars')
 	class Meta:
 		verbose_name=u'User'
 		verbose_name_plural=u'Users'
