@@ -20,7 +20,7 @@ class Question(models.Model):
 	text= models.TextField(verbose_name=u'Text')
 	author = models.ForeignKey('Profile')
 	tags=models.ManyToManyField(Tag)
-	rating=models.IntegerField(default=0)
+	rating=models.IntegerField(default=0,verbose_name=u'rating')
 	class Meta:
 		verbose_name=u'Question'
 		verbose_name_plural=u'Questions'
@@ -29,15 +29,20 @@ class Question(models.Model):
 
 class Answer(models.Model):
 	text= models.TextField(verbose_name=u'Text')
-	author = models.ForeignKey('Profile')
+	author = models.ForeignKey('Profile',verbose_name=u'User')
 	tags=models.ManyToManyField(Tag)
+	rating=models.IntegerField(default=0,verbose_name=u'rating')
+	question=models.ForeignKey('Question',default=0,verbose_name=u'Question')
 	class Meta:
 		verbose_name=u'Answer'
 		verbose_name_plural=u'Answers'
 	def __uncode__(self):
 		return self.text
-class Like(models.Model):
-	user=models.ForeignKey('Profile')
+class LikeQuestion(models.Model):
+	user=models.ForeignKey('Profile',verbose_name=u'User')
 	question=models.ForeignKey('Question')
 	value=((1,'like'),(-1,'dislike'))
-
+class LikeAnswer(models.Model):
+	user=models.ForeignKey('Profile',verbose_name=u'User')
+	answer=models.ForeignKey('Answer')
+	value=((1,'like'),(-1,'dislike'))

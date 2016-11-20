@@ -2,13 +2,14 @@ from django.shortcuts import render
 from django.template.loader import get_template
 from django.template import RequestContext
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
+from ask_app.models import *
 # Create your views here.
 def index(request):
 	questions=[]
 	t =get_template('index.html')
 	for i in range(1,10):
 		questions.append({'question_id':i,'title': 'title'+str(i), 'text':'text','author': 'user '+str(i),'rating':i, 'tags':[str(i), 'tag'+str(i)]},)
+	#questions=paginator(request,questions)
 	context={'questions':questions, 'isAuth':True}
 	return render(request,'index.html',context)
 
@@ -43,7 +44,7 @@ def hot(request):
 	for i in range(1,10):
 		questions.append({'question_id':i,'title': 'title'+str(i), 'text':'text','author': 'user '+str(i),'rating':i, 'tags':[str(i), 'tag'+str(i)]},)
 	context={'questions':questions,'isAuth':False}
-	return render(request,'index.html',context)
+	return render(request,'hot.html',context)
 
 def tag(request,tag):
 	questions=[]
@@ -52,18 +53,11 @@ def tag(request,tag):
 		questions.append({'question_id':i,'title': 'title'+str(i), 'text':'text','author': 'user '+str(i),'rating':str(i), 'tags':[str(i), 'tag'+str(i)]},)
 	context={'questions':questions,'tag':tag,'isAuth':True}
 	return render(request,'tag.html',context)
-
-
-def paginator(request):
-	questions = question.objects.all()
-	paginator = Paginator(questions, 10)
-	page = self.request.GET.get('page')
-	try:
-		questions = paginator.page(page)
-	except PageNotAnInteger:
-		# If page is not an integer, deliver first page.
-		questions = paginator.page(1)
-	except EmptyPage:
-		# If page is out of range (e.g. 9999), deliver last page of results.
-		questions = paginator.page(paginator.num_pages)
-	return questions
+def paginator(request,questions):
+	#questions=Question.objects.all()questions=[]
+	limit =request.Get.get('limit',10)
+	page=reguest.Get.get('page',1)
+	paginator=Paginator(questions,limit)
+	paginator.baseurl='/?page='
+	page=paginator.page(page)
+	return render(request, 'index.html',{'posts': page.object_list, 'paginator':paginator,'page':page,})
