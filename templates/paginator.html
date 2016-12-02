@@ -20,17 +20,16 @@
             </ul>
           </nav>
       </div>  --->
-
      <div align="center"><ul class="pagination">
-
-    {% for p in paginator.page_range  %}
-        {% if p.number == page.number %}
-		<li class="active">
+    {% for numb in paginator.page_range  %}
+        {% if numb == page.number %}
+		<li class="active"><a href="#">{{ numb }}</a></li>
 	{% else %}
 		<li>
-        {% endif %}       
-            <a href="{{paginator.baseurl}}{{p.number}}"> {{ p.number }}</a>
-        </li>
+<!--            <a href="{{paginator.baseurl}}{{p.number}}"> {{ p.number }}</a>-->
+            <a href="?page={{ numb }}">{{ numb }}</a>
+        </li>{% endif %}
+
     {% endfor %}
    </ul>
    </div>

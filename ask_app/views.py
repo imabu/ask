@@ -7,10 +7,10 @@ from ask_app.models import *
 def index(request):
 	questions=[]
 	t =get_template('index.html')
-	for i in range(1,10):
+	for i in range(1,39):
 		questions.append({'question_id':i,'title': 'title'+str(i), 'text':'text','author': 'user '+str(i),'rating':i, 'tags':[str(i), 'tag'+str(i)]},)
-	#questions=paginator(request,questions)
-	context={'questions':questions, 'isAuth':True}
+	questions,paginator1,page=paginator(request,questions)
+	context={'questions':questions, 'isAuth':True,'page':page,'paginator':paginator1}
 	return render(request,'index.html',context)
 
 def signup(request):
@@ -55,9 +55,9 @@ def tag(request,tag):
 	return render(request,'tag.html',context)
 def paginator(request,questions):
 	#questions=Question.objects.all()questions=[]
-	limit =request.Get.get('limit',10)
-	page=reguest.Get.get('page',1)
+	limit =request.GET.get('limit',10)
+	page=request.GET.get('page',1)
 	paginator=Paginator(questions,limit)
 	paginator.baseurl='/?page='
 	page=paginator.page(page)
-	return render(request, 'index.html',{'posts': page.object_list, 'paginator':paginator,'page':page,})
+	return page.object_list, paginator,page
