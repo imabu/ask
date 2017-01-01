@@ -1,26 +1,26 @@
 {% extends "base.html" %}
-{% block title %} Вопрос {{question_details.question_id}} {% endblock %}
+{% block title %} #{{question_details.id}} {% endblock %}
 {% block content %}
       <div class="row" id="question" >
         <div class="col-md-2">
            <a href=#><p align="center">{{question_details.author}}</p>
-          <p><img id="avatar"src="../../avatar.png" border="0", height="70",width="70"></p>  </a>
-          <div class="btn-group" data-toggle="buttons" id="button-like">
-            <button type="radio" class="btn btn-success" name="like" value="1">
-            <span class="glyphicon glyphicon-thumbs-up" ></span>
-            </button>                   
-            <button type="radio" class="btn btn-danger" name="dislike" value="1" >
-            <span class="glyphicon glyphicon-thumbs-down" ></span>
-            </button>
-            <div align="center" id="rating">{{question_details.rating}}</div>
+          {% if question_details.author.avatar%}
+          	<div class="block-avatar"><img id="avatar"src="{{ question_details.author.avatar.url }}" border="0"></div>
+	  {% else %}
+		<div class="block-avatar"><img id="avatar"src="/static/img/avatar.png" border="0"></div>
+	  {% endif %}
+          <div align ="center"  >
+            <a href=#> <span  class="glyphicon glyphicon-thumbs-up" ></span></a>  
+	    <span id="rating">{{question_details.rating}}</span>         
+            <a href=#> <span class="glyphicon glyphicon-thumbs-down" ></span></a>           
           </div>
         </div>
         <div class="col-md-10" >
           <h3 id ="question-header">{{question_details.title}}</h3>
           <p align="justify" id="question-text">{{question_details.text}}</p>
           <div id="question-bottom">            
-           Теги: {% for tag in question_details.tags %}
-            <a href="tag.html" id="tags"> {{tag}}</a>
+           Теги: {% for tag in question_details.tag_list %}
+            <a href="{% url 'tag' tag%}" id="tags"> {{tag}}</a>
             {% endfor %}
           </div>
         </div>
@@ -31,15 +31,15 @@
       <div class="row" id="answer_true" >
         <div class="col-md-2">
          <a href=#><p align="center"> {{comment.author}}</p>
-          <p><img id="avatar"src="../../avatar.png" border="0", height="70",width="70"></p></a>
-          <div class="btn-group" data-toggle="buttons" id="button-like">
-            <button type="radio" class="btn btn-success" name="like" value="1">
-            <span  class="glyphicon glyphicon-thumbs-up" ></span>
-            </button>                   
-            <button type="radio" class="btn btn-danger" name="dislike" value="1" >
-            <span class="glyphicon glyphicon-thumbs-down" ></span>
-            </button>
-            <div align="center" id="rating">{{comment.rating}}</div>
+          {% if comment.author.avatar%}
+          	<div class="block-avatar"><img id="avatar"src="{{ comment.author.avatar.url }}" border="0"></div>
+	  {% else %}
+		<div class="block-avatar"><img id="avatar"src="/static/img/avatar.png" border="0"></div>
+	  {% endif %}
+          <div align ="center"  >
+            <a href=#> <span  class="glyphicon glyphicon-thumbs-up" ></span></a>  
+	    <span id="rating">{{comment.rating}}</span>         
+            <a href=#> <span class="glyphicon glyphicon-thumbs-down" ></span></a>           
           </div>
         </div>
         <div class="col-md-10" >          
@@ -52,31 +52,30 @@
 {% else %}
       <div class="row" id="answer" >	  
         <div class="col-md-2">
-          <a href=#><span>{{comment.author}}</span>
-          <p><img id="avatar"src="../../avatar.png" border="0", height="70",width="70"></p></a>
-          <div class="btn-group" data-toggle="buttons" id="button-like">
-            <button type="radio" class="btn btn-success" name="like" value="1">
-            <span  class="glyphicon glyphicon-thumbs-up" ></span>
-            </button>                   
-            <button type="radio" class="btn btn-danger" name="dislike" value="1" >
-            <span class="glyphicon glyphicon-thumbs-down" ></span>
-            </button>
-            <div align="center" id="rating">{{comment.rating}}</div>
+          <a href=#><p align="center">{{comment.author}}</p>
+          {% if comment.author.avatar%}
+          	<div class="block-avatar"><img id="avatar"src="{{ comment.author.avatar.url }}" border="0"></div>
+	  {% else %}
+		<div class="block-avatar"><img id="avatar"src="/static/img/avatar.png" border="0"></div>
+	  {% endif %}
+          <div align ="center" >
+            <a href=#> <span  class="glyphicon glyphicon-thumbs-up" ></span></a>  
+	    <span id="rating">{{comment.rating}}</span>         
+            <a href=#> <span class="glyphicon glyphicon-thumbs-down" ></span></a>           
           </div>
         </div>
         <div class="col-md-10" >          
-          <p align="justify" id="question-text">{{comment.text}}</p>
-          <div id="question-bottom">
-            <div class="checkbox">
-                <label>
-                  <input type="checkbox"> Правильный ответ
-                </label>
-            </div>          
-          </div>
+          <div align="justify" id="question-text">{{comment.text}}</div>
+          <span id="question-bottom">
+                           
+                  <input type="checkbox"><label> Правильный ответ</label>
+                      
+          </span>
         </div>
       </div>
 {% endif %}
 {%endfor %}
+{% if isAuth %}
 	<div>
 	<textarea class="form-control add-answer" rows="5"></textarea>
 	 <div class="form-group">
@@ -85,6 +84,7 @@
            </div>
          </div>
 	</div>
+{% endif %}
 {% endblock content %}
 
    

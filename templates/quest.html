@@ -1,27 +1,31 @@
-
+	
       <div>
        <div class="row" id="block-question" >
         <div class="col-md-2">
-         <a href=#><p align="center"> {{quest.author}}</p>
-          <p><img id="avatar"src="/static/img/avatar.png" border="0", height="70",width="70"></p>
-	      <div class="btn-group" data-toggle="buttons" id="button-like">
-            <button type="radio" class="btn btn-success" name="like" value="1">
-              <span class="glyphicon glyphicon-thumbs-up" ></span>
-            </button>
-            <button type="radio" class="btn btn-danger" name="dislike" value="1" >
-              <span class="glyphicon glyphicon-thumbs-down " ></span>
-            </button>
-            <div align="center" id="rating">{{quest.rating}}</div>
+         <a href=#><p  style="font:bold" align="center"> {{quest.author.nickname}}</p>
+	{% if quest.author.avatar%}
+          <div class="block-avatar"><img id="avatar"src="{{ quest.author.avatar.url }}" border="0"></div>
+	
+	{% else %}
+	<div class="block-avatar"><img id="avatar"src="/static/img/avatar.png" border="0"></div>
+	{% endif %}
+	    <div align ="center"  >
+            <a href=#> <span  class="glyphicon glyphicon-thumbs-up" ></span></a>  
+	    <span id="rating">{{quest.rating}}</span>         
+            <a href=#> <span class="glyphicon glyphicon-thumbs-down" ></span></a>           
           </div>
 	    </div>
         <div class="col-md-10">
-          <h3 id ="question-header"><a style="color:#08088A" href="{% url 'question_detail' quest.question_id %}"> {{quest.title}} </a></h3>
+          <h3 id ="question-header"><a style="color:#08088A" href="{% url 'question_detail' quest.id %}"> {{quest.title}} </a></h3>
           <p align="justify" id="question-text">{{quest.text}}</p>
           <div id="question-bottom">
-            <a style="color:#08088A" href="{% url 'question_detail' quest.question_id %}"> Ответы(1) </a>
-	       Теги{% for tag in quest.tags %}
-              <a href="{% url 'tag' tag%}" id="tags"> {{tag}} </a>
-            {% endfor %}
+            <a style="color:#08088A" href="{% url 'question_detail' quest.id %}"> Ответы({{quest.answer_count}}) </a>
+	       	{% if quest.tag_list %}
+		Теги
+		{% for tag in quest.tag_list %}
+		<a href="{% url 'tag' tag.value%}" id="tags"> {{tag.value}} </a>
+            	{% endfor %}
+		{% endif %}
           </div>
         </div>
    </div>

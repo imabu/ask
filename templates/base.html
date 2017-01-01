@@ -21,36 +21,39 @@
      <div class="row">
       <div class="col-md-1"></div>
        <div class="col-md-7">
-        <a class="navbar-brand" href="../../">
-        <img src="/static/img/logo.png" border="0", height="50",width="50"></a>
+        <div class="navbar-brand" >        
+	<a href="/../../">{% include "run.svg" %}</a></div>
         <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="search" class="form-control" placeholder="Search...">
-            <button type="submit" class="btn btn-info">Поиск</button>
+          <div class="form-group" >
+            <input type="search" size="40px" class="form-control" placeholder="Найти вопрос">
+            <button type="submit" class="btn btn-default">Поиск</button>
           </div>
         </form>
           {% if isAuth%}
-          <form class="navbar-form navbar-left" role="ask">
+          
+       </div>
+        <div class="col-md-1 navbar-user" >
+          <div id="navbar-avatar-block" align="right"><a href=#><img  id="navbar-avatar" src="/static/img/avatar.png" border="0"> </a></div>
+        </div>
+        <div class="col-md-1 navbar-user" >
+         <p id="navbar-autho"> <a style="color:#FFFFFF" href="/../../settings" >Настройки </a> </p>
+         <p id="navbar-autho"> <a style="color:#FFFFFF" href="/../../logout" >Выйти</a> </p>
+        </div>
+	<form class="navbar-form navbar-left" role="ask">
             <div class="form-group">
                <a href="../../ask" class="btn btn-info">Задать вопрос</a>
             </div>
           </form>
-       </div>
-        <div class="col-md-1 navbar-user" >
-          <a href=#><img id ="avatar" src="/static/img/avatar.png" border="0", height="46",width="46", align="right"> </a>
-        </div>
-        <div class="col-md-1 navbar-user" >
-         <p id="navbar-autho"> <a style="color:#FFFFFF" href="/../../settings" >Настройки </a> </p>
-         <p id="navbar-autho"> <a style="color:#FFFFFF" href=# >Выйти</a> </p>
-        </div>
         {% else %}
       </div>
-        <form class="navbar-form" >
-           <div class="navbar-brand form-group">
-             <a href="../../login" class="btn btn-info">Войти</a>
-             <a href="../../signup" class="btn btn-info">Регистрация</a>
+        
+           <div class="col-sm-1" id="navbar-login">
+            <h4><a href="../../login"  style="color:white">Войти</a></h4>
+	   </div>
+	   <div class="col-sm-1" id="navbar-login">
+            <h4> <a href="../../signup"  style="color:white">Регистрация</a></h4>
            </div>
-        </form>
+       
         {% endif %}
     </div>
     </div>
@@ -65,25 +68,30 @@
 
      <div class="col-md-3" >
       <div align="center" id="right">
+	{% if popular_tag %}
         <h2>Популярные теги</h2>
           <div align="justify">
-            <a id="poptag_h3" href="{% url 'tag' 'Python'%}" >Python</a>
-            <a id="poptag_h1" href="{% url 'tag' 'C'%}" >C</a>
-            <a id="poptag_h2" href="{% url 'tag' 'web'%}" >web</a>
-            <a id="poptag_h1" href="{% url 'tag' 'Chrome'%}" >Chrome</a>
-            <a id="poptag_h3" href="{% url 'tag' 'CSS'%}" >CSS</a>
-            <a id="poptag_h1" href="{% url 'tag' 'BMSTU'%}" >BMSTU</a>
+	  {% for tag in popular_tag %}
+		{% if tag.many %}
+	         <a id="poptag_h1" href="{% url 'tag' tag%}" >{{tag.value}}</a>
+		{% else %}
+		<a id="poptag_h2" href="{% url 'tag' tag.value%}" >{{tag.value}}</a>
+            	{% endif %}
+	  {% endfor %}
           </div>
+	{% endif %}
       </div>
       <div align="center" id="right">
-        <h2>Лучшие пользователи</h2>
+	{% if popular_user %}
+        <h2>Популярные пользователи</h2>
         <h4>
             <div align="left">
-                <p><a  href=# >Doctor</a></p>
-                <p><a href=# >Amelia</a></p>
-                <p><a href=# >Rorry</a></p>
+		{% for user in popular_users %}
+                <p><a  href=# >{{user.nickname}}</a></p>   
+		{% endfor %}             
             </div>
-        </h4>        
+        </h4> 
+	{% endif %}       
       </div>
     </div>
   </div>

@@ -12,12 +12,13 @@ body { padding-top: 0px; }
 .navbar-user{
 	padding:0px;
 	margin:0px;
+	
 }
 .navbar{
   height:70px;
   padding-top:10px;
   padding-bottom:10px;
-  background: #234584;
+  background: #1C0B60;
   }
 .navbar-brand{
     padding:0px;
@@ -25,11 +26,13 @@ body { padding-top: 0px; }
 #navbar-autho{
   padding:0px 0px 0px 10px;
   margin: 5px 0px 0px 7px;  
-  color:#FFFFFF;
-  font: bold 120%
+  
   }
 #avatar{
     border-radius: 10px;
+    position: absolute;
+    width:100%;
+    height: 100%;
   }
 #right{
   padding: 5px;
@@ -41,7 +44,7 @@ body { padding-top: 0px; }
 
 
 #block-question { 
- border: 1px solid #08088A; 
+ border: 2px solid #1C0B60; 
  border-radius:15px;
  padding: 5px;
  margin:10px 10px 20px 10px; 
@@ -75,7 +78,7 @@ margin-top:0px;
  #question-text{
   min-height: 130px;
   padding-bottom:10px;
-  margin-bottom:15px;
+  margin-bottom:25px;
   }
 #button-like{
   margin-left: 0px;
@@ -91,18 +94,18 @@ margin-top:0px;
 margin:5px;
 }
 #rating{
-  color:green;
+  color:#234584;
   font-size:150%;
-  padding: 0px;
+  padding: 3px;
   }
 
   #poptag_h1{
-    color: #a764de;
+    color:#190fbc;
     font-size:150%;
     padding:2px;
   }
   #poptag_h2{
-  color:#02a9f7;
+  color:#6781db;
   font-size:130%;
   padding:2px;
   }
@@ -120,22 +123,70 @@ margin:5px;
     border: lightgreen solid 1px
   } 
 
-input[type="password"]:valid { 
-    border: lightgreen solid 1px
 
-  } 
-input[type="text"]:valid { 
-    border: lightgreen solid 1px
 
-  } 
   .error{
+    
     color:#f7025c;
+    padding:10px;
   }
+.help{
+   
+   color:#737373;
+   padding:10px;
+}
   footer{
 	  
   }
   .add-answer{
-	 width: 97%;
+	width: 97%;
 	margin-left: 11px;
 	margin-bottom:10px;
   }
+#navbar-login{
+	padding-left:57px;
+	padding-top:5px;
+	
+}
+.navbar-login{
+	padding:10px;
+}
+.g4576:hover{
+	
+	-webkit-animation-name: bowtie;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-direction: alternate;
+	
+}
+@-webkit-keyframes bowtie{
+	0%{
+		transform: rotate(-1deg);}	
+
+	50%{
+		
+		transform: rotate(2deg);
+	}
+	100%{
+		
+		transform: rotate(-1deg);
+	}
+}
+.block-avatar{
+	height:70px;
+	position:relative;
+	margin-left:10px;
+	margin-right:10px;
+}
+#navbar-avatar-block{
+	position:relative;
+	height:46px;
+	width:46px;
+	}
+#navbar-avatar{
+	border-radius:10px;
+	position:absolute;
+	height:100%;
+	width:100%;
+}
